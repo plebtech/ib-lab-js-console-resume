@@ -27,12 +27,30 @@ let positions = [
 
 ]
 let skills = [
-    'HTML',
-    'CSS',
-    'BAM: JavaScript',
-    'Java',
-    'C#',
-    'BAM: AWS'
+    {
+        name: 'HTML',
+        cool: false
+    },
+    {
+        name: 'CSS',
+        cool: false
+    },
+    {
+        name: 'JavaScript',
+        cool: true
+    },
+    {
+        name: 'Java',
+        cool: false
+    },
+    {
+        name: 'C#',
+        cool: false
+    },
+    {
+        name: 'AWS',
+        cool: true
+    }
 ]
 
 // calls main function.
@@ -47,7 +65,7 @@ function logResume() {
     logInterests();
     logSpace();
     logPast();
-    logSkills();
+    displaySkill(skills);
 }
 
 // print name to console.
@@ -75,12 +93,11 @@ function logInterests() {
     }
 }
 
+// steps through all positions in an array of objects and passes each one to displayPosition function.
 function logPast() {
     console.log('Experience:');
     for (let i in positions) {
-        console.log(positions[i].company);
-        console.log(positions[i].title);
-        console.log(positions[i].desc);
+        displayPosition(positions[i]);
         logSpace();
     }
 }
@@ -91,9 +108,13 @@ function displayPosition(position) {
     console.log(position.desc);
 }
 
-function logSkills() {
-    console.log('Skills:');
+function displaySkill(skills) {
     for (let i in skills) {
-        console.log(skills[i]);
+        if (skills[i].cool === true) {
+            console.log("BAM: " + skills[i].name);
+        } else {
+            console.log(skills[i].name);
+        }
     }
+
 }
