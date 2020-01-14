@@ -79,17 +79,17 @@ function logInterests() {
 function logPast() {
     console.log('Experience:');
     for (let i in positions) {
-        displayPosition(positions[i]);
-        logSpace();
+        displayPosition(positions[i].company, positions[i].title, positions[i].desc);
     }
+    logSpace();
 }
 
-function displayPosition(position) {
-    console.log(position.company);
-    console.log(position.title);
-    console.log(position.desc);
+// print the elements of a position object in certain format.
+function displayPosition(company, title, desc) {
+    console.log(title + " at " + company + " - " + desc);
 }
 
+// checks if a skill is cool and prints it.
 function displaySkill(skills) {
     for (let i in skills) {
         if (skills[i].cool === true) {
