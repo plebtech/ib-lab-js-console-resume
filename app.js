@@ -53,39 +53,21 @@ let skills = [
     }
 ]
 
-// calls main function.
-logResume();
+console.log(name.toUpperCase());
+console.log(field);
+console.log(desc);
+logSpace();
+logInterests();
+logSpace();
+logPast();
+displaySkill(skills);
 
-// overarching function.
-function logResume() {
-    logName();
-    logField();
-    logDesc();
-    logSpace();
-    logInterests();
-    logSpace();
-    logPast();
-    displaySkill(skills);
-}
-
-// print name to console.
+// print blank line.
 function logSpace() {
     console.log(" ");
 }
 
-function logName() {
-    console.log(name.toUpperCase());
-}
-
-// print career field to console.
-function logField() {
-    console.log(field);
-}
-
-function logDesc() {
-    console.log(desc);
-}
-
+// steps through all interests.
 function logInterests() {
     console.log('Interests:');
     for (let i in interests) {
